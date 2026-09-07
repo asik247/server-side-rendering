@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🍽️ FoodieExpress — Modern Food Delivery Platform
 
-## Getting Started
+[![React](https://img.shields.io/badge/React-18.x-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 
-First, run the development server:
+A clean, responsive food ordering interface featuring animated product cards, interactive skeletons, item detail previews, and shopping cart integration.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Modern Food Cards**: Smooth hover states, category pill badges, ratings, and price formatting.
+- **Skeleton Loaders**: Custom pulse animations matching the exact card dimensions during data fetch.
+- **Responsive Grid**: Adaptive layout scaling effortlessly from mobile screens to 4K displays.
+- **Action Triggers**: Ready-to-connect handlers for **View Details** modals and **Add to Cart** state.
+- **Dark Mode Ready**: Pre-configured Tailwind dark mode classes on cards and skeletons.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend Library**: React.js
+- **Styling**: Tailwind CSS
+- **Icons**: Inline SVG icons (Zero extra bundle size)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Folder Structure
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+src/
+├── components/
+│   ├── FoodCard.jsx          # Interactive Food Card
+│   ├── FoodCardSkeleton.jsx  # Pulse Skeleton Placeholder
+│   └── FoodList.jsx          # Responsive Grid Container
+├── App.jsx
+└── main.jsx
