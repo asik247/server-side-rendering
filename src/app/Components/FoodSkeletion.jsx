@@ -2,7 +2,7 @@ import React from 'react';
 
 const FoodCardSkeleton = () => {
   return (
-    <div className="animate-pulse flex flex-col justify-between overflow-hidden rounded-2xl bg-white border border-slate-100 shadow-sm dark:bg-slate-900 dark:border-slate-800">
+    <div className="animate-pulse flex flex-col  justify-between overflow-hidden rounded-2xl bg-white border border-slate-100 shadow-sm dark:bg-slate-900 dark:border-slate-800">
       {/* Image Skeleton */}
       <div className="aspect-[4/3] w-full bg-slate-200 dark:bg-slate-800" />
 
