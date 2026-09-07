@@ -79,7 +79,7 @@ const FoodCard = ({ food, onAddToCart, onViewDetails }) => {
                     </Link>
 
                    {/* Add to cut btn here */}
-                   <AddToCutBtn></AddToCutBtn>
+                   <AddToCutBtn food={food}></AddToCutBtn>
                 </div>
             </div>
         </div>
