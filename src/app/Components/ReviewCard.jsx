@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const ReviewCard = ({ review }) => {
@@ -31,11 +32,16 @@ const ReviewCard = ({ review }) => {
                 <div className="flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
                         {userImg ? (
+
                             <img
                                 src={userImg}
                                 alt={userName}
                                 className="h-11 w-11 rounded-full object-cover border border-emerald-100 dark:border-slate-700"
                             />
+                            //! REmote img opt.
+                            // <Image width={100} height={100} src={userImg}
+                            //     alt={userName}
+                            //     className="h-11 w-11 rounded-full object-cover border border-emerald-100 dark:border-slate-700"></Image>
                         ) : (
                             <div className="flex h-11 w-11 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 font-bold text-base dark:bg-emerald-950 dark:text-emerald-300">
                                 {userName.charAt(0).toUpperCase()}

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import AddToCutBtn from './Btns/AddToCutBtn';
+import Image from 'next/image';
 
 const FoodCard = ({ food, onAddToCart, onViewDetails }) => {
     const {
@@ -28,12 +29,17 @@ const FoodCard = ({ food, onAddToCart, onViewDetails }) => {
         <div className="group flex flex-col justify-between overflow-hidden rounded-2xl bg-white border border-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900 dark:border-slate-800">
             {/* Media & Badges */}
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
-                <img
+                {/* REmotely opt image */}
+                {/* <img
                     src={foodImg}
                     alt={''}
                     className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                     loading="lazy"
-                />
+                /> */}
+                <Image width={400} height={300} src={foodImg}
+                    alt={''}
+                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                    loading="lazy"></Image>
 
                 {/* Category Pill */}
                 <span className="absolute top-3 left-3 rounded-full bg-white/90 backdrop-blur-md px-3 py-1 text-xs font-semibold text-slate-800 shadow-sm dark:bg-slate-900/90 dark:text-slate-200">
@@ -78,8 +84,8 @@ const FoodCard = ({ food, onAddToCart, onViewDetails }) => {
                         View Details
                     </Link>
 
-                   {/* Add to cut btn here */}
-                   <AddToCutBtn food={food}></AddToCutBtn>
+                    {/* Add to cut btn here */}
+                    <AddToCutBtn food={food}></AddToCutBtn>
                 </div>
             </div>
         </div>
