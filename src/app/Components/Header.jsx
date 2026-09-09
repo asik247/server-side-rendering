@@ -20,6 +20,9 @@ const Header = () => {
                 <ActiveLinks href="/reviews" className="hover:text-red-500 transition">
                     Reviews
                 </ActiveLinks>
+                <ActiveLinks href="/feedback" className="hover:text-red-500 transition">
+                    FeedBack
+                </ActiveLinks>
             </nav>
         </header>
     );

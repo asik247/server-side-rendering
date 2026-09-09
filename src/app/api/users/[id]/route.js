@@ -5,7 +5,7 @@ import { updateTag } from "next/cache";
 export async function GET(req, { params }) {
     const { id } = await params;
     const allUsers = await connect("users");
-    // return Response.json(allUsers)
+  
     const singleUser = await allUsers.findOne({
         _id: new ObjectId(id)
     })
