@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import FeedBackCard from '../Components/FeedBackRelative/FeedBackCard';
+import FeedBackLoading from '../Components/FeedBackRelative/FeedBackLoading';
 // const getData = async()=>{
 //     const res = await fetch("http://localhost:3000/api/reviews");
 //     const data = await res.json();
@@ -11,11 +12,15 @@ const FeedBack = () => {
     // const feedback = await getData();
     // console.log(feedback);
     const [feedback, setFeedback] = useState([]);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         fetch("http://localhost:3000/api/reviews")
             .then(res => res.json())
-            .then(data => setFeedback(data))
+            .then(data => {setFeedback(data),setLoading(false)})
     }, [])
+     if(loading){
+        return <FeedBackLoading></FeedBackLoading>
+     }
     return (
         <div>
 
