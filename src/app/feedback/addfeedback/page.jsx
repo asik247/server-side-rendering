@@ -11,6 +11,7 @@ const AddFeedback = () => {
 
         const message = e.target.feedbackMessage.value;
         // ? this message post revies collection.
+        //Todo just 1 line code inserted data in db.
         const res = await fetch(`${process.env.NEXT_PUBLIC_url}/api/reviews`, {
             method: "POST",
             headers: {
