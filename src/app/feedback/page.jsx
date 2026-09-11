@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FeedBackCard from "../Components/FeedBackRelative/FeedBackCard";
+import { connect } from "../lib/mongodbConnect";
 export const dynamic = "force-dynamic";
 const getData = async () => {
     const res = await fetch(
@@ -16,7 +17,9 @@ const getData = async () => {
 };
 
 const FeedBack = async () => {
-    const feedback = await getData();
+    // const feedback = await getData();
+    //Todo derickley get mongodb data..
+    const feedback = await (await connect("reviews")).find().toArray();
 
     return (
         <div>
