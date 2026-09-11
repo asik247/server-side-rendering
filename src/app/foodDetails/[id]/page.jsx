@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 
 // Helper to convert standard YouTube links into embed URLs
 const getYouTubeEmbedUrl = (url) => {
@@ -48,19 +49,21 @@ const FoodsDetailsPage = async ({ params }) => {
     const { id } = await params;
     const detailsFood = await fetchFoodDetailsData(id);
 
-    if (!detailsFood) {
-        return (
-            <div className="min-h-[70vh] flex flex-col items-center justify-center text-center p-6">
-                <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Food Item Not Found</h2>
-                <p className="mt-2 text-slate-500">We couldn't locate the recipe you are looking for.</p>
-                <Link
-                    href="/"
-                    className="mt-5 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-500"
-                >
-                    Back to Menu
-                </Link>
-            </div>
-        );
+    if (!detailsFood.title) {
+        //? redirect food page.
+        redirect("/foods")
+        // return (
+        //     <div className="min-h-[70vh] flex flex-col items-center justify-center text-center p-6">
+        //         <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Food Item Not Found</h2>
+        //         <p className="mt-2 text-slate-500">We couldn't locate the recipe you are looking for.</p>
+        //         <Link
+        //             href="/"
+        //             className="mt-5 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-500"
+        //         >
+        //             Back to Menu
+        //         </Link>
+        //     </div>
+        // );
     }
 
     const {

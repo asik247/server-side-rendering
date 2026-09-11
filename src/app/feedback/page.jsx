@@ -1,15 +1,15 @@
 import Link from "next/link";
 import FeedBackCard from "../Components/FeedBackRelative/FeedBackCard";
-
+export const dynamic = "force-dynamic";
 const getData = async () => {
     const res = await fetch(
-        "http://localhost:3000/api/reviews",
-        {
-            cache:'force-cache',
-            next: {
-                revalidate: 60,
-            },
-        }
+        `${process.env.NEXT_PUBLIC_url}/api/reviews`,
+        // {
+        //     // cache:'force-cache',
+        //     next: {
+        //         revalidate: 60,
+        //     },
+        // }
     );
 
     return res.json();

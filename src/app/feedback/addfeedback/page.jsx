@@ -1,22 +1,31 @@
 'use client'
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const AddFeedback = () => {
-    const handlerAddFeedBack = async(e) => {
+    //? router usign.
+    const router = useRouter();
+
+    const handlerAddFeedBack = async (e) => {
         e.preventDefault();
+
         const message = e.target.feedbackMessage.value;
         // ? this message post revies collection.
-        const res = await fetch("http://localhost:3000/api/reviews",{
-            method:"POST",
-            headers:{
-                "content-type":"application/json"
+        const res = await fetch(`${process.env.NEXT_PUBLIC_url}/api/reviews`, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
             },
-            body:JSON.stringify({message})
+            body: JSON.stringify({ message })
+
         })
         const data = await res.json();
         // console.log(data);
-        if(data?.insertedId){
+        if (data?.insertedId) {
             alert(message)
+            //? successfully inserted data then rote feedback page.
+            router.push("/feedback")
+
         }
 
     }
